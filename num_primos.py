@@ -5,21 +5,34 @@ import math
 
 
 def eh_primo(n: int) -> bool:
-    """
-    Verifica se um número é primo.
-    
+   """
+    Verifica se um número inteiro é primo.
+
+    Um número primo é aquele maior que 1 que possui exatamente dois divisores:
+    1 e ele mesmo.
+
+    A função aplica otimizações:
+    - Elimina números menores que 2
+    - Trata o caso especial do número 2
+    - Descarta números pares maiores que 2
+    - Verifica divisores ímpares até a raiz quadrada de n
+
     Args:
-        n: Número inteiro a ser verificado.
-        
+        n (int): Número inteiro a ser verificado.
+
     Returns:
-        True se o número for primo, False caso contrário.
-        
+        bool: 
+            True se o número for primo.
+            False caso contrário.
+
     Examples:
         >>> eh_primo(2)
         True
         >>> eh_primo(7)
         True
         >>> eh_primo(10)
+        False
+        >>> eh_primo(1)
         False
     """
     if n < 2:
